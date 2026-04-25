@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aura Jewellery</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <!-- Our CSS file -->
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- React & Babel (CDN — no install needed) -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav>
+    <div class="logo">AURA</div>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <span class="cart-info">🛒 Cart <span id="cart-count">0</span></span>
+      <button id="dark-btn">🌙 Dark</button>
+    </div>
+  </nav>
+
+
+  <!-- ==================== HERO ==================== -->
+  <section id="home">
+    <h1>AURA</h1>
+    <p>Timeless jewellery crafted with love &amp; elegance</p>
+    <a href="#products" class="btn">Shop Now</a>
+  </section>
+
+
+  <!-- ==================== ABOUT ==================== -->
+  <section id="about">
+    <h2>Our Story</h2>
+    <br/>
+    <p>
+      Aura Jewellery was born from a deep love of craftsmanship. Since 2010, we
+      have created elegant, handcrafted pieces using ethically sourced gemstones
+      and precious metals. Every Aura jewel is made to be cherished forever.
+    </p>
+  </section>
+
+
+  <!-- ==================== COLLECTIONS ==================== -->
+  <section id="collections">
+    <h2>Collections</h2>
+    <div class="col-row">
+      <div class="col-card">
+        <div class="icon">💍</div>
+        <h3>Rings</h3>
+        <p>24 designs</p>
+      </div>
+      <div class="col-card">
+        <div class="icon">📿</div>
+        <h3>Necklaces</h3>
+        <p>18 designs</p>
+      </div>
+      <div class="col-card">
+        <div class="icon">✨</div>
+        <h3>Earrings</h3>
+        <p>32 designs</p>
+      </div>
+      <div class="col-card">
+        <div class="icon">🪙</div>
+        <h3>Bracelets</h3>
+        <p>15 designs</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== PRODUCTS (React renders here) ==================== -->
+  <section id="products">
+    <h2>Featured Products</h2>
+
+    <!--
+      This empty div is where React will inject the product cards.
+      React finds it by id="react-products" in react-products.js
+    -->
+    <div id="react-products" style="position:relative;"></div>
+  </section>
+
+
+  <!-- ==================== REVIEWS ==================== -->
+  <section id="reviews">
+    <h2>Customer Reviews</h2>
+    <div class="rev-row">
+
+      <div class="rev-card">
+        <div class="stars">★★★★★</div>
+        <p class="rev-text">"Absolutely stunning ring! The quality is amazing and it arrived beautifully packaged."</p>
+        <div class="rev-author">— Priya M., Mumbai</div>
+      </div>
+
+      <div class="rev-card">
+        <div class="stars">★★★★★</div>
+        <p class="rev-text">"I gifted the Lumière necklace to my wife. She absolutely loves it — worth every rupee!"</p>
+        <div class="rev-author">— Arjun S., Delhi</div>
+      </div>
+
+      <div class="rev-card">
+        <div class="stars">★★★★★</div>
+        <p class="rev-text">"Elegant, classy, and exactly as described. Aura is now my go-to brand for jewellery."</p>
+        <div class="rev-author">— Nisha K., Bangalore</div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>We'd love to hear from you!</p>
+
+    <form class="contact-form" id="contact-form">
+
+      <input type="text"  id="c-name"  placeholder="Your Name"/>
+      <span class="err" id="err-name"></span>
+
+      <input type="email" id="c-email" placeholder="Your Email"/>
+      <span class="err" id="err-email"></span>
+
+      <textarea id="c-msg" placeholder="Your Message (min 10 chars)"></textarea>
+      <span class="err" id="err-msg"></span>
+
+      <button type="submit" class="btn" style="border:none;">Send Message</button>
+      <div class="ok-msg" id="form-ok"></div>
+
+    </form>
+  </section>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <p>© 2025 <span>Aura Jewellery</span> — Crafted with ❤️</p>
+  </footer>
+
+
+  <!-- Load our JS file (must come AFTER HTML so elements exist) -->
+  <script src="script.js"></script>
+
+  <!-- Load our React file LAST (needs script.js's addItemToCart function) -->
+  <script src="react-products.js"></script>
+
+</body>
+</html>
